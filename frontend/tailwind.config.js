@@ -7,6 +7,9 @@ export default {
         primary: "#558B6E",
         secondary: "#fafafa",
       },
+      fontFamily: {
+        sans: ["Outfit", "sans-serif"],
+      },
     },
   },
   plugins: [],

@@ -1,13 +1,14 @@
-import { useState } from "react";
 import Navbar from "./components/Navbar";
+import HeroSection from "./components/HeroSection";
+import AboutUsSection from "./components/AboutUsSection";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div>
         <Navbar />
+        <HeroSection />
+        <AboutUsSection />
       </div>
     </>
   );
