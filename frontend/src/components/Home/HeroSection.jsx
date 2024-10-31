@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 const HeroSection = () => {
   return (
     <Swiper
@@ -20,8 +20,7 @@ const HeroSection = () => {
       pagination={{
         clickable: true,
       }}
-      navigation={true}
-      modules={[Autoplay, Pagination, Navigation]}
+      modules={[Autoplay, Pagination]}
       className="mySwiper w-full h-screen pt-[50px] flex items-center justify-center"
     >
       <SwiperSlide>
