@@ -8,7 +8,7 @@ export default {
         secondary: "#fafafa",
       },
       fontFamily: {
-        sans: ["Outfit", "sans-serif"],
+        serif: ["Outfit", "serif"],
       },
     },
   },
