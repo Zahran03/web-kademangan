@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import HelpButtons from "../HelpButtons";
 
 const AboutUsSection = () => {
   return (

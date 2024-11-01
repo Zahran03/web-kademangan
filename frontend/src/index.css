@@ -9,3 +9,14 @@
 body {
   @apply text-primary;
 }
+
+.umkm-swiper {
+  .swiper-wrapper {
+    @apply flex items-center;
+  }
+  .swiper-slider {
+    &.swiper-slide-active {
+      @apply bg-red-500 text-white max-w-[450px] aspect-square transition-transform delay-300 ease-in-out;
+    }
+  }
+}
