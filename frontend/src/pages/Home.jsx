@@ -5,7 +5,7 @@ import UMKMSection from "../components/Home/UMKMSection";
 
 const Home = () => {
   return (
-    <main className="pb-20">
+    <main className="pb-40">
       {/* Hero Section */}
       <HeroSection />
       {/* About Us Section  */}

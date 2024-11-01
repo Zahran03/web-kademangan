@@ -21,13 +21,17 @@ const HeroSection = () => {
         clickable: true,
       }}
       modules={[Autoplay, Pagination]}
-      className="mySwiper w-full h-screen pt-[50px] flex items-center justify-center"
+      className="mySwiper max-w-[2160px] w-full h-full pt-[50px] flex items-center justify-center"
     >
       <SwiperSlide>
-        <img src="./image2.jpeg" alt="hero image" className="w-full h-screen" />
+        <img
+          src="./image2.jpeg"
+          alt="hero image"
+          className="w-full h-full object-cover mx-auto"
+        />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
-          <h1 className="text-6xl font-bold max-w-[560px]">
-            Desa Kademangan Kabupaten Cianjur
+          <h1 className="text-6xl font-bold w-full">
+            Desa Kademangan <br className="hidden md:flex" /> Kabupaten Cianjur
           </h1>
         </div>
       </SwiperSlide>
