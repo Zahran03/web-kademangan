@@ -1,7 +1,7 @@
-import React from "react";
 import HeroSection from "../components/Home/HeroSection";
 import AboutUsSection from "../components/Home/AboutUsSection";
 import NewsSection from "../components/Home/NewsSection";
+import UMKMSection from "../components/Home/UMKMSection";
 
 const Home = () => {
   return (
@@ -12,6 +12,8 @@ const Home = () => {
       <AboutUsSection />
       {/* News Section  */}
       <NewsSection />
+      {/* UMKM Section */}
+      <UMKMSection />
     </main>
   );
 };
