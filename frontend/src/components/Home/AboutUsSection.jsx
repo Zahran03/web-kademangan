@@ -20,11 +20,10 @@ const AboutUsSection = () => {
               tentang desa kademangan
             </h2>
             <p className="text-lg md:text-xl text-justify mt-4">
-              Lorem ipsum dolor sit amet consectetur. Odio gravida nullam risus
-              porta urna pharetra. Donec quis proin urna ac faucibus placerat
-              vel. Et et aliquam id massa pretium massa vestibulum. Eu
-              vestibulum orci justo vehicula gravida nunc pellentesque id
-              sodales.
+            Kademangan adalah desa yang berada kecamatan Mande, Cianjur, Jawa Barat, Indonesia.
+            Desa ini termasuk wilayah datar yang cukup luas diantara desa lain yang berada
+            di kecamatan mande. Desa kademangan memiliki karakteristik bersifat agraris dengan
+            mata pencarian sebagian besar penduduknya bercocok tanam dengan hasil utama padi.
             </p>
           </div>
           <div className="flex items-center justify-around">
