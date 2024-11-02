@@ -1,19 +1,18 @@
 const supabase = require("../supabaseClient");
 
-const getAllBerita = async (req, res) => {
+const getAllUmkm = async (req, res) => {
   try {
-    const { data: berita, error } = await supabase.from("berita").select();
-
-    return res.send(berita);
+    const { data: umkm, error } = await supabase.from("UMKM").select();
+    return res.send(umkm);
   } catch (error) {
     return res.send({ error });
   }
 };
 
-const getBeritaById = async (req, res) => {
+const getUmkmById = async (req, res) => {
   try {
     const { data, error } = await supabase
-      .from("berita")
+      .from("UMKM")
       .select()
       .eq("id", req.params.id);
 
@@ -23,9 +22,9 @@ const getBeritaById = async (req, res) => {
   }
 };
 
-const createBerita = async (req, res) => {
+const createUmkm = async (req, res) => {
   try {
-    const { data, error } = await supabase.from("berita").insert(req.body);
+    const { data, error } = await supabase.from("UMKM").insert(req.body);
     if (error) {
       return res.status(400).json(error);
     }
@@ -35,10 +34,10 @@ const createBerita = async (req, res) => {
   }
 };
 
-const updateBerita = async (req, res) => {
+const updateUmkm = async (req, res) => {
   try {
     const { data: existingData, error: existingError } = await supabase
-      .from("berita")
+      .from("UMKM")
       .select("*")
       .eq("id", req.params.id)
       .single();
@@ -47,31 +46,34 @@ const updateBerita = async (req, res) => {
 
     // Lakukan update data
     const { data: updatedData, error: updatedError } = await supabase
-      .from("berita")
+      .from("UMKM")
       .update({
-        judul: req.body.judul ? req.body.judul : existingData.judul,
-        gambar: req.body.gambar ? req.body.gambar : existingData.gambar,
+        nama_umkm: req.body.nama_umkm
+          ? req.body.nama_umkm
+          : existingData.nama_umkm,
+        kategori: req.body.kategori ? req.body.kategori : existingData.kategori,
         deskripsi: req.body.deskripsi
           ? req.body.deskripsi
           : existingData.deskripsi,
+        gambar: req.body.gambar ? req.body.gambar : existingData.gambar,
       })
       .eq("id", req.params.id);
 
     if (updatedError) throw updatedError;
-    const { data, err } = await supabase.from("berita").select();
+    const { data, err } = await supabase.from("UMKM").select();
     return res.status(200).send(data);
   } catch (error) {
     res.send({ error });
   }
 };
 
-const deleteBerita = async (req, res) => {
+const deleteUmkm = async (req, res) => {
   try {
     const { data, error } = await supabase
-      .from("berita")
+      .from("UMKM")
       .delete()
       .eq("id", req.params.id);
-    const { datar, errorr } = await supabase.from("berita").select();
+    const { datar, errorr } = await supabase.from("UMKM").select();
     if (error) {
       return res.status(400).json(error);
     }
@@ -82,9 +84,9 @@ const deleteBerita = async (req, res) => {
 };
 
 module.exports = {
-  getAllBerita,
-  getBeritaById,
-  createBerita,
-  updateBerita,
-  deleteBerita,
+  getAllUmkm,
+  getUmkmById,
+  createUmkm,
+  updateUmkm,
+  deleteUmkm,
 };
