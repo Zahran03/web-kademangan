@@ -21,10 +21,10 @@ app.use(express.json());
 // });
 
 // const upload = multer({ storage: storage });
-app.get("/", (req, res) => {
-  console.log("test");
-  res.send("Hello from our server!");
-});
+// app.get("/", (req, res) => {
+//   console.log("test");
+//   res.send("Hello from our server!");
+// });
 // berita routes
 app.use("/berita", beritaRoutes);
 

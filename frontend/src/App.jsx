@@ -9,9 +9,11 @@ import {
 
 import Home from "./pages/Home";
 import MainLayout from "./layout/MainLayout";
-import HomeDashboard from "./components/dashboard/HomeDashboard";
-
 import DashBoardLayout from "./layout/DashBoardLayout";
+import DashboardAdmin from "./pages/DashboardAdmin";
+import CreateBerita from "./pages/CreateBerita";
+import Berita from "./pages/Berita";
+import UmkmDashboard from "./pages/UmkmDashboard";
 
 function App() {
   const router = createBrowserRouter(
@@ -23,7 +25,10 @@ function App() {
           {/* test dashboard */}
         </Route>
         <Route path="/dashboard" element={<DashBoardLayout />}>
-          <Route path="navbar" element={<HomeDashboard />} />
+          <Route index element={<DashboardAdmin />} />
+          <Route path="BuatBerita" element={<CreateBerita />} />
+          <Route path="Berita" element={<Berita />} />
+          <Route path="Umkm" element={<UmkmDashboard />} />
         </Route>
       </>
     )

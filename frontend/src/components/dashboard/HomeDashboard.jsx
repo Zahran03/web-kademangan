@@ -1,5 +1,4 @@
 import React from "react";
-import TableDashboard from "./TableDashboard";
 import InfoTable from "./InfoTable";
 import SideBar from "./SideBar";
 
