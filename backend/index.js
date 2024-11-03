@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+const cors = require("cors");
 // const env = require("dotenv");
 const beritaRoutes = require("./routes/beritaRoutes");
 const umkmRoutes = require("./routes/umkmRoutes");
 
+app.use(cors());
 app.use(express.json());
 
 // const multer = require("multer");
@@ -19,7 +21,10 @@ app.use(express.json());
 // });
 
 // const upload = multer({ storage: storage });
-
+app.get("/", (req, res) => {
+  console.log("test");
+  res.send("Hello from our server!");
+});
 // berita routes
 app.use("/berita", beritaRoutes);
 
