@@ -1,19 +1,34 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/shared/Navbar";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
+
 import Home from "./pages/Home";
-import Footer from "./components/shared/Footer";
+import MainLayout from "./layout/MainLayout";
+import HomeDashboard from "./components/dashboard/HomeDashboard";
+
+import DashBoardLayout from "./layout/DashBoardLayout";
 
 function App() {
-  return (
-    <Router>
-      <Navbar />
-      <Routes>
-        {/* Homepage */}
-        <Route path="/" element={<Home />} />
-      </Routes>
-      <Footer />
-    </Router>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <>
+        <Route path="/" element={<MainLayout />}>
+          {/* Homepage */}
+          <Route index element={<Home />} />
+          {/* test dashboard */}
+        </Route>
+        <Route path="/dashboard" element={<DashBoardLayout />}>
+          <Route path="navbar" element={<HomeDashboard />} />
+        </Route>
+      </>
+    )
   );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
