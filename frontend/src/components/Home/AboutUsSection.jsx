@@ -20,16 +20,17 @@ const AboutUsSection = () => {
               tentang desa kademangan
             </h2>
             <p className="text-lg md:text-xl text-justify mt-4">
-            Kademangan adalah desa yang berada kecamatan Mande, Cianjur, Jawa Barat, Indonesia.
-            Desa ini termasuk wilayah datar yang cukup luas diantara desa lain yang berada
-            di kecamatan mande. Desa kademangan memiliki karakteristik bersifat agraris dengan
-            mata pencarian sebagian besar penduduknya bercocok tanam dengan hasil utama padi.
+              Kademangan adalah desa yang berada kecamatan Mande, Cianjur, Jawa
+              Barat, Indonesia. Desa ini termasuk wilayah datar yang cukup luas
+              diantara desa lain yang berada di kecamatan mande. Desa kademangan
+              memiliki karakteristik bersifat agraris dengan mata pencarian
+              sebagian besar penduduknya bercocok tanam dengan hasil utama padi.
             </p>
           </div>
           <div className="flex items-center justify-around">
             <div className="flex flex-col items-center gap-y-4">
               <Link
-                href="/"
+                to="/struktur"
                 className="p-4 bg-primary w-fit aspect-square rounded-xl"
               >
                 <img
@@ -44,7 +45,7 @@ const AboutUsSection = () => {
             </div>
             <div className="flex flex-col items-center gap-y-4">
               <Link
-                href="/"
+                to="/layanan"
                 className="p-4 bg-primary w-fit aspect-square rounded-xl"
               >
                 <img
@@ -59,7 +60,7 @@ const AboutUsSection = () => {
             </div>
             <div className="flex flex-col items-center gap-y-4">
               <Link
-                href="/"
+                to="/pengaduan"
                 className="p-4 bg-primary w-fit aspect-square rounded-xl"
               >
                 <img src="./inbox.png" alt="inbox icon" className="w-[50px]" />

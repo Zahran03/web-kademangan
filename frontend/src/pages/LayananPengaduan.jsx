@@ -66,7 +66,7 @@ const LayananPengaduan = () => {
             </div>
 
             {/* Pesan */}
-            <div className="flex items-start space-x-3 border-b border-white pb-2">
+            <div className="flex items-start space-x-3 border-b border-white pt-16 ">
               <span className="text-white text-xl">✉️</span>
               <textarea
                 name="message"
