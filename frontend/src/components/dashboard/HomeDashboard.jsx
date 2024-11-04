@@ -1,4 +1,3 @@
-import React from "react";
 import InfoTable from "./InfoTable";
 import SideBar from "./SideBar";
 

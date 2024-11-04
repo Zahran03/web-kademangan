@@ -1,50 +1,49 @@
-import Table from "../components/dashboard/Table";
-import { useState, useEffect } from "react";
-
 const Berita = () => {
-  const [dataBerita, setDataBerita] = useState([]);
-  useEffect(() => {
-    const fetchBerita = async () => {
-      try {
-        const res = await fetch("http://localhost:3000/berita");
-        const data = await res.json();
-        setDataBerita(data);
-      } catch (error) {}
-    };
-    fetchBerita();
-  }, []);
-  //console.log(dataBerita);
+  const beritaItems = [
+    {
+      imgSrc: "src/pemandangandesa.webp",
+      title: "Judul Berita",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore modi dolorum voluptatibus doloremque aspernatur excepturi. Dolores, debitis delectus. Aut rerum et tenetur? Nemo, quidem sunt.",
+    },
+    {
+      imgSrc: "src/pemandangandesa.webp",
+      title: "Judul Berita",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore modi dolorum voluptatibus doloremque aspernatur excepturi. Dolores, debitis delectus. Aut rerum et tenetur? Nemo, quidem sunt.",
+    },
+    {
+      imgSrc: "src/pemandangandesa.webp",
+      title: "Judul Berita",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore modi dolorum voluptatibus doloremque aspernatur excepturi. Dolores, debitis delectus. Aut rerum et tenetur? Nemo, quidem sunt.",
+    },
+  ];
 
-  const columns = [
-    { Header: "Judul", accessor: "judul" },
-    { Header: "Gambar", accessor: "gambar" },
-    { Header: "Deskripsi", accessor: "deskripsi" },
-  ];
-  const dataTable = [
-    { name: "John Doe", age: 28, email: "john@example.com" },
-    { name: "Jane Smith", age: 34, email: "jane@example.com" },
-    { name: "Mike Johnson", age: 45, email: "mike@example.com" },
-  ];
   return (
-    <div className="flex flex-wrap container  bg-secondary rounded-md">
-      <div className="w-full mx-auto">
-        <h1 className="text-3xl text-primary font-bold mb-20">Data Berita</h1>
-        <div className="flex items-center justify-between gap-3 mb-5">
-          <form className="w-full">
-            <input
-              type="text"
-              className="w-full px-1 py-3 border border-primary rounded-md"
-            />
-          </form>
+    <section className="w-full flex flex-col justify-center px-32 mt-20">
+      <h1 className="text-5xl font-bold text-[#558B6E]">Berita</h1>
+      <hr className="w-full h-[2px] my-6 bg-[#558B6E] mx-auto" />
 
-          <button className="bg-primary text-secondary px-3 py-3 inline-flex items-center rounded-md">
-            Cari
-          </button>
+      {beritaItems.map((item, index) => (
+        <div key={index} className="flex flex-row justify-center mt-6">
+          <img
+            src={item.imgSrc}
+            alt="Thumbnail"
+            className="w-[275px] h-[154.5px]"
+          />
+          <div className="ml-6">
+            <a
+              href="layananmasyarakat.html"
+              className="text-2xl font-bold text-[#558B6E] underline"
+            >
+              {item.title}
+            </a>
+            <p className="mt-2 text-lg text-[#558B6E]">{item.description}</p>
+          </div>
         </div>
-        {/* <BarAction /> */}
-        <Table columns={columns} data={dataBerita} />
-      </div>
-    </div>
+      ))}
+    </section>
   );
 };
 

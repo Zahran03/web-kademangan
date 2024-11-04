@@ -2,11 +2,13 @@ import React from "react";
 
 const NewsSection = () => {
   return (
-    <section className="mt-20 max-w-[1175px] mx-auto">
+    <section className="mt-20 max-w-[1175px] mx-auto px-4 md:px-0">
       <h2 className="text-2xl font-bold capitalize md:text-4xl text-center">
         berita terbaru
       </h2>
-      <div className="mt-20 grid grid-cols-3 justify-items-center gap-x-8">
+      {/* pembungkus card */}
+      <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* element card */}
         <div className="flex flex-col bg-primary w-full aspect-square">
           <div>
             <img
@@ -26,6 +28,7 @@ const NewsSection = () => {
             </p>
           </div>
         </div>
+        {/* element card */}
         <div className="flex flex-col bg-primary w-full aspect-square">
           <div>
             <img
@@ -65,6 +68,7 @@ const NewsSection = () => {
           </div>
         </div>
       </div>
+      {/* pembungkus card */}
     </section>
   );
 };

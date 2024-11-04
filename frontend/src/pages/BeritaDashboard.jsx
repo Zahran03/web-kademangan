@@ -1,36 +1,29 @@
 import Table from "../components/dashboard/Table";
 import { useState, useEffect } from "react";
 
-const UmkmDashboard = () => {
-  const [umkm, setUmkm] = useState([]);
+const BeritaDashboard = () => {
+  const [dataBerita, setDataBerita] = useState([]);
   useEffect(() => {
-    try {
-      const fetchUmkm = async () => {
-        const res = await fetch("http://localhost:3000/UMKM");
+    const fetchBerita = async () => {
+      try {
+        const res = await fetch("http://localhost:3000/berita");
         const data = await res.json();
-        setUmkm(data);
-      };
-      fetchUmkm();
-    } catch (error) {
-      console.log(error);
-    }
+        setDataBerita(data);
+      } catch (error) {}
+    };
+    fetchBerita();
   }, []);
+
   const columns = [
-    { Header: "Nama UMKM", accessor: "nama_umkm" },
-    { Header: "Kategori", accessor: "kategori" },
-    { Header: "Deskripsi", accessor: "deskripsi" },
+    { Header: "Judul", accessor: "judul" },
     { Header: "Gambar", accessor: "gambar" },
+    { Header: "Deskripsi", accessor: "deskripsi" },
   ];
 
-  // const data = [
-  //   { name: "John Doe", age: 28, email: "john@example.com" },
-  //   { name: "Jane Smith", age: 34, email: "jane@example.com" },
-  //   { name: "Mike Johnson", age: 45, email: "mike@example.com" },
-  // ];
   return (
     <div className="flex flex-wrap container  bg-secondary rounded-md">
       <div className="w-full mx-auto">
-        <h1 className="text-3xl text-primary font-bold mb-20">Data Umkm</h1>
+        <h1 className="text-3xl text-primary font-bold mb-20">Data Berita</h1>
         <div className="flex items-center justify-between gap-3 mb-5">
           <form className="w-full">
             <input
@@ -44,10 +37,10 @@ const UmkmDashboard = () => {
           </button>
         </div>
         {/* <BarAction /> */}
-        <Table columns={columns} data={umkm} />
+        <Table columns={columns} data={dataBerita} />
       </div>
     </div>
   );
 };
 
-export default UmkmDashboard;
+export default BeritaDashboard;

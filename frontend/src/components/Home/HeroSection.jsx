@@ -35,7 +35,13 @@ const HeroSection = () => {
           </h1>
         </div>
       </SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>
+        <img
+          src="./image2.jpeg"
+          alt="hero image"
+          className="w-full h-full object-cover mx-auto"
+        />
+      </SwiperSlide>
       {/* <SwiperSlide>Slide 3</SwiperSlide>
       <SwiperSlide>Slide 4</SwiperSlide>
       <SwiperSlide>Slide 5</SwiperSlide>
