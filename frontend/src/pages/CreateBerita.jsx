@@ -11,23 +11,44 @@ const CreateBerita = () => {
   // Fungsi handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Sanitize and get plain text description
     const sanitizedDeskripsi = DOMPurify.sanitize(deskripsi);
     const plainTextDeskripsi =
       new DOMParser().parseFromString(sanitizedDeskripsi, "text/html").body
         .textContent || "";
+
+    // Object to hold the new post data
     const newPost = {
       judul,
       deskripsi: plainTextDeskripsi,
     };
+
+    // Upload file if exists
     if (file) {
       const data = new FormData();
-      const filename = Date.now() + file.name;
+      const filename = Date.now() + "_" + file.name;
       data.append("name", filename);
       data.append("file", file);
-      newPost.gambar = filename;
+
       try {
-      } catch (err) {}
+        const uploadResponse = await fetch("http://localhost:3000/upload", {
+          method: "POST",
+          body: data,
+        });
+
+        if (uploadResponse.ok) {
+          newPost.gambar = filename;
+        } else {
+          throw new Error("File upload failed");
+        }
+      } catch (error) {
+        console.error("Error uploading file:", error);
+        return;
+      }
     }
+
+    // Send new post data to server
     try {
       const res = await fetch("http://localhost:3000/berita/create", {
         method: "POST",
@@ -36,9 +57,15 @@ const CreateBerita = () => {
         },
         body: JSON.stringify(newPost),
       });
-      window.location.replace("/dashboard/Berita");
-    } catch (error) {}
-    console.log(newPost);
+
+      if (res.ok) {
+        window.location.replace("/dashboard/Berita");
+      } else {
+        console.error("Error creating post");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
   return (
     <div className="flex flex-wrap container bg-secondary rounded-md">
@@ -48,6 +75,15 @@ const CreateBerita = () => {
             <h1 className="text-2xl font-bold mb-6 text-center">
               Form Input Berita
             </h1>
+            <div className="w-full py-2 ">
+              {file && (
+                <img
+                  className="w-full object-cover object-center"
+                  src={URL.createObjectURL(file)}
+                  alt=""
+                />
+              )}
+            </div>
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Input Judul */}
               <div>

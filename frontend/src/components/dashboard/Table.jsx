@@ -34,11 +34,11 @@ const Table = ({ columns, data }) => {
               {/* Tambahkan kolom dengan tombol aksi */}
               <td className="flex gap-1 py-2 px-4 border border-gray-300 text-gray-800">
                 <button className="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600">
-                  Edit
+                  Lihat
                 </button>
-                <button className="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600">
+                {/* <button className="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600">
                   Delete
-                </button>
+                </button> */}
               </td>
             </tr>
           ))}
