@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const AboutUsSection = () => {
   return (
-    <section className="container flex items-center justify-center mt-20 mx-auto">
+    <section className="container flex items-center justify-center mx-auto mt-[150px]">
       <div className="w-full md:max-w-[1080px] flex md:flex-row flex-col items-center md:items-start justify-between">
         {/* GMaps iframe  */}
         <iframe

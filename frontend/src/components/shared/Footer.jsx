@@ -12,7 +12,7 @@ const Footer = () => {
         </div>
 
         {/* Kontak */}
-        <div className="flex flex-col w-full md:w-auto items-center md:items-start text-center md:text-left gap-y-4 md:gap-y-8">
+        <div className="flex flex-col w-full md:w-[275px] items-center md:items-start text-center md:text-left gap-y-4 md:gap-y-8">
           <div className="text-lg md:text-xl font-medium capitalize">
             Kontak
           </div>

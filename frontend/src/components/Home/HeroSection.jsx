@@ -5,8 +5,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// import required modules
+// Import required modules
 import { Autoplay, Pagination } from "swiper/modules";
+
 const HeroSection = () => {
   return (
     <Swiper
@@ -21,16 +22,16 @@ const HeroSection = () => {
         clickable: true,
       }}
       modules={[Autoplay, Pagination]}
-      className="mySwiper max-w-[2160px] w-full h-full pt-[50px] flex items-center justify-center"
+      className="mySwiper w-full h-screen flex items-center justify-center"
     >
       <SwiperSlide>
         <img
           src="./image2.jpeg"
           alt="hero image"
-          className="w-full h-full object-cover mx-auto"
+          className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
-          <h1 className="text-6xl font-bold w-full">
+          <h1 className="text-4xl md:text-6xl font-bold w-full">
             Desa Kademangan <br className="hidden md:flex" /> Kabupaten Cianjur
           </h1>
         </div>
@@ -39,16 +40,9 @@ const HeroSection = () => {
         <img
           src="./image2.jpeg"
           alt="hero image"
-          className="w-full h-full object-cover mx-auto"
+          className="w-full h-full object-cover"
         />
       </SwiperSlide>
-      {/* <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      <SwiperSlide>Slide 5</SwiperSlide>
-      <SwiperSlide>Slide 6</SwiperSlide>
-      <SwiperSlide>Slide 7</SwiperSlide>
-      <SwiperSlide>Slide 8</SwiperSlide>
-      <SwiperSlide>Slide 9</SwiperSlide> */}
     </Swiper>
   );
 };

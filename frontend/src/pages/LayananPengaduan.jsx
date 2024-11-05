@@ -3,7 +3,7 @@ import React from "react";
 const LayananPengaduan = () => {
   return (
     <div className="flex flex-col items-center min-h-screen mx-3 mt-[150px] mb-[376px]">
-      <h1 className="text-3xl font-bold text-green-700 mt-10">
+      <h1 className="text-3xl font-bold text-primary mt-10">
         Layanan Pengaduan
       </h1>
       <div className="flex flex-col md:flex-row mt-10 w-full max-w-[850px] bg-primary rounded-lg overflow-hidden shadow-lg">

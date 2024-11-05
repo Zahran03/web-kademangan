@@ -6,7 +6,7 @@ const LayananMasyarakat = () => {
   ];
 
   return (
-    <section className="px-32 mt-20">
+    <section className="px-32 mt-[200px] mb-[213px]">
       <h1 className="text-5xl font-bold text-[#558B6E] text-center">
         Layanan Masyarakat
       </h1>

@@ -2,7 +2,7 @@ import UMKMSlider from "./UMKMSlider";
 
 const UMKMSection = () => {
   return (
-    <section className="bg-primary text-white container mx-auto flex flex-col mt-20 px-12 py-24 pt-36">
+    <section className="bg-primary text-white container mx-auto flex flex-col mt-20 px-12 py-24 pt-36 mb-[301px]">
       {/* Top Section */}
       <div className="flex flex-col gap-y-4">
         <h2 className="text-2xl font-bold capitalize md:text-4xl">
@@ -17,7 +17,7 @@ const UMKMSection = () => {
       </div>
       {/* Bottom Section */}
       {/* UMKM Swiper Slider */}
-      <div className="mt-20">
+      <div className="mt-20 ">
         <UMKMSlider />
       </div>
     </section>

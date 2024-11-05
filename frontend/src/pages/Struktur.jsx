@@ -1,6 +1,6 @@
 const Struktur = () => {
   return (
-    <section className="struktur mx-[133px] my-[200px]">
+    <section className="struktur mx-5 my-[200px]">
       <h1 className="text-[#558B6E] font-bold text-4xl leading-[60px] text-justify">
         Struktur
       </h1>

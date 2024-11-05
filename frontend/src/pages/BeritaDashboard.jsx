@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Table from "../components/dashboard/Table";
 import { useState, useEffect } from "react";
 
@@ -23,7 +24,12 @@ const BeritaDashboard = () => {
   return (
     <div className="flex flex-wrap container  bg-secondary rounded-md">
       <div className="w-full mx-auto">
-        <h1 className="text-3xl text-primary font-bold mb-20">Data Berita</h1>
+        <h1 className="text-3xl text-primary font-bold mb-12">Data Berita</h1>
+        <div className="mb-8">
+          <button className="font-semibold bg-primary text-secondary px-3 py-2 rounded-md">
+            <Link to="/dashboard/PostBerita">Buat Berita</Link>
+          </button>
+        </div>
         <div className="flex items-center justify-between gap-3 mb-5">
           <form className="w-full">
             <input

@@ -6,7 +6,7 @@ const UmkmPages = () => {
   ];
 
   return (
-    <section className="px-32 mt-20">
+    <section className="px-32 mt-[200px] mb-[213px]">
       <h1 className="text-5xl font-bold text-[#558B6E] text-center">UMKM</h1>
       <div className="flex flex-wrap justify-center mt-10">
         {umkmItems.map((item, index) => (

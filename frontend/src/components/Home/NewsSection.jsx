@@ -2,7 +2,7 @@ import React from "react";
 
 const NewsSection = () => {
   return (
-    <section className="mt-20 max-w-[1175px] mx-auto px-4 md:px-0">
+    <section className="mt-20 max-w-[1175px] mx-auto px-4 md:px-1 mb-[150px]">
       <h2 className="text-2xl font-bold capitalize md:text-4xl text-center">
         berita terbaru
       </h2>

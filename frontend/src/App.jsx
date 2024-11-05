@@ -20,6 +20,7 @@ import BeritaDashboard from "./pages/BeritaDashboard";
 import Berita from "./pages/Berita";
 import LayananMasyarakat from "./pages/LayananMasyarakat";
 import LayananPengaduan from "./pages/LayananPengaduan";
+import CreateUmkm from "./pages/CreateUmkm";
 
 function App() {
   const router = createBrowserRouter(
@@ -37,10 +38,11 @@ function App() {
         </Route>
         <Route path="/dashboard" element={<DashBoardLayout />}>
           <Route index element={<DashboardAdmin />} />
-          <Route path="BuatBerita" element={<CreateBerita />} />
+          {/* <Route path="BuatBerita" element={<CreateBerita />} /> */}
           <Route path="Berita" element={<BeritaDashboard />} />
           <Route path="Umkm" element={<UmkmDashboard />} />
           <Route path="PostBerita" element={<CreateBerita />} />
+          <Route path="PostUmkm" element={<CreateUmkm />} />
         </Route>
       </>
     )

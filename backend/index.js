@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const cors = require("cors");
-// const env = require("dotenv");
 const beritaRoutes = require("./routes/beritaRoutes");
 const umkmRoutes = require("./routes/umkmRoutes");
+const authRoutes = require("./routes/Auth");
 
 app.use(cors());
 app.use(express.json());
@@ -22,6 +22,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
+// autentikasi
+app.use("/auth", authRoutes);
+
 // berita routes
 app.use("/berita", beritaRoutes);
 
@@ -33,8 +36,6 @@ app.post("/upload", upload.single("file"), (req, res) => {
   res.status(200).json("file sudah di upload");
 });
 
-// module.exports = supabase;
-
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log("backend running");
 });

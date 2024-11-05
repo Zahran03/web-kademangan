@@ -3,12 +3,12 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import DOMPurify from "dompurify";
 
-const CreateBerita = () => {
-  const [judul, setJudul] = useState("");
+const CreateUmkm = () => {
+  const [nama_umkm, setNama_umkm] = useState("");
+  const [kategori, setKategori] = useState("");
   const [deskripsi, setDeskripsi] = useState("");
   const [file, setFile] = useState(null);
 
-  // Fungsi handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     const sanitizedDeskripsi = DOMPurify.sanitize(deskripsi);
@@ -16,7 +16,8 @@ const CreateBerita = () => {
       new DOMParser().parseFromString(sanitizedDeskripsi, "text/html").body
         .textContent || "";
     const newPost = {
-      judul,
+      nama_umkm,
+      kategori,
       deskripsi: plainTextDeskripsi,
     };
     if (file) {
@@ -29,14 +30,14 @@ const CreateBerita = () => {
       } catch (err) {}
     }
     try {
-      const res = await fetch("http://localhost:3000/berita/create", {
+      const res = await fetch("http://localhost:3000/UMKM/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(newPost),
       });
-      window.location.replace("/dashboard/Berita");
+      window.location.replace("/dashboard/Umkm");
     } catch (error) {}
     console.log(newPost);
   };
@@ -46,7 +47,7 @@ const CreateBerita = () => {
         <div className="flex items-center justify-center min-h-screen">
           <div className="w-full max-w-xl p-8 bg-white rounded-md shadow-md">
             <h1 className="text-2xl font-bold mb-6 text-center">
-              Form Input Berita
+              Tambah Data Umkm
             </h1>
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Input Judul */}
@@ -55,16 +56,42 @@ const CreateBerita = () => {
                   className="block text-gray-700 font-semibold mb-2"
                   htmlFor="judul"
                 >
-                  Judul
+                  Nama Umkm
                 </label>
                 <input
                   type="text"
                   id="judul"
-                  value={judul}
-                  onChange={(e) => setJudul(e.target.value)}
+                  value={nama_umkm}
+                  onChange={(e) => setNama_umkm(e.target.value)}
                   className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                  placeholder="Masukkan judul berita"
+                  placeholder="Masukkan Nama Umkm"
                 />
+              </div>
+
+              {/* Input Kategori */}
+              <div>
+                <label
+                  className="block text-gray-700 font-semibold mb-2"
+                  htmlFor="kategori"
+                >
+                  Kategori
+                </label>
+                <select
+                  id="kategori"
+                  value={kategori}
+                  onChange={(e) => setKategori(e.target.value)}
+                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  <option value="">Pilih kategori</option>
+                  <option value="Peternakan">Peternakan</option>
+                  <option value="Kerajinan Tangan">Kerajinan Tangan</option>
+                  <option value="Pengolahan Pangan Lokal">
+                    Pengolahan Pangan Lokal
+                  </option>
+                  <option value="Wisata">Wisata</option>
+                  <option value="Penginapan">Penginapan</option>
+                  <option value="Penginapan">Kuliner</option>
+                </select>
               </div>
 
               {/* Input Gambar */}
@@ -103,7 +130,7 @@ const CreateBerita = () => {
               {/* Tombol Submit */}
               <button
                 type="submit"
-                className="w-full py-2 px-4 bg-primary text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 "
+                className="w-full py-2 px-4 bg-primary text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
               >
                 Submit
               </button>
@@ -115,4 +142,4 @@ const CreateBerita = () => {
   );
 };
 
-export default CreateBerita;
+export default CreateUmkm;
