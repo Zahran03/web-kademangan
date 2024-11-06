@@ -21,7 +21,10 @@ import Berita from "./pages/Berita";
 import LayananMasyarakat from "./pages/LayananMasyarakat";
 import LayananPengaduan from "./pages/LayananPengaduan";
 import CreateUmkm from "./pages/CreateUmkm";
-import EditBerita from "./pages/EditBerita";
+import BeritaDetailDashboard, {
+  beritaLoader,
+} from "./pages/BeritaDetailDashboard";
+import UmkmDetailDashboard, { umkmLoader } from "./pages/UmkmDetailDashboard";
 
 function App() {
   const router = createBrowserRouter(
@@ -39,10 +42,18 @@ function App() {
         </Route>
         <Route path="/dashboard" element={<DashBoardLayout />}>
           <Route index element={<DashboardAdmin />} />
-          {/* <Route path="BuatBerita" element={<CreateBerita />} /> */}
           <Route path="Berita" element={<BeritaDashboard />} />
-          <Route path="Berita/:id" element={<EditBerita />} />
+          <Route
+            path="Berita/:id"
+            element={<BeritaDetailDashboard />}
+            loader={beritaLoader}
+          />
           <Route path="Umkm" element={<UmkmDashboard />} />
+          <Route
+            path="Umkm/:id"
+            element={<UmkmDetailDashboard />}
+            loader={umkmLoader}
+          />
           <Route path="PostBerita" element={<CreateBerita />} />
           <Route path="PostUmkm" element={<CreateUmkm />} />
         </Route>

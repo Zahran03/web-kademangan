@@ -16,6 +16,7 @@ const BeritaDashboard = () => {
   }, []);
 
   const columns = [
+    { Header: "Id", accessor: "id" },
     { Header: "Judul", accessor: "judul" },
     { Header: "Gambar", accessor: "gambar" },
     { Header: "Deskripsi", accessor: "deskripsi" },
@@ -43,7 +44,7 @@ const BeritaDashboard = () => {
           </button>
         </div>
         {/* <BarAction /> */}
-        <Table columns={columns} data={dataBerita} />
+        <Table columns={columns} data={dataBerita} url={"Berita"} />
       </div>
     </div>
   );

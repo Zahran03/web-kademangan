@@ -1,7 +1,6 @@
 import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import DOMPurify from "dompurify";
 
 const CreateUmkm = () => {
   const [nama_umkm, setNama_umkm] = useState("");
@@ -11,23 +10,34 @@ const CreateUmkm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const sanitizedDeskripsi = DOMPurify.sanitize(deskripsi);
-    const plainTextDeskripsi =
-      new DOMParser().parseFromString(sanitizedDeskripsi, "text/html").body
-        .textContent || "";
     const newPost = {
       nama_umkm,
       kategori,
-      deskripsi: plainTextDeskripsi,
+      deskripsi,
     };
+
+    // Upload file if exists
     if (file) {
       const data = new FormData();
       const filename = Date.now() + file.name;
       data.append("name", filename);
       data.append("file", file);
-      newPost.gambar = filename;
+
       try {
-      } catch (err) {}
+        const uploadResponse = await fetch("http://localhost:3000/upload", {
+          method: "POST",
+          body: data,
+        });
+
+        if (uploadResponse.ok) {
+          newPost.gambar = filename;
+        } else {
+          throw new Error("File upload failed");
+        }
+      } catch (error) {
+        console.error("Error uploading file:", error);
+        return;
+      }
     }
     try {
       const res = await fetch("http://localhost:3000/UMKM/create", {
@@ -49,6 +59,15 @@ const CreateUmkm = () => {
             <h1 className="text-2xl font-bold mb-6 text-center">
               Tambah Data Umkm
             </h1>
+            <div className="w-full py-2 ">
+              {file && (
+                <img
+                  className="w-full object-cover object-center"
+                  src={URL.createObjectURL(file)}
+                  alt=""
+                />
+              )}
+            </div>
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Input Judul */}
               <div>
@@ -90,7 +109,7 @@ const CreateUmkm = () => {
                   </option>
                   <option value="Wisata">Wisata</option>
                   <option value="Penginapan">Penginapan</option>
-                  <option value="Penginapan">Kuliner</option>
+                  <option value="Kuliner">Kuliner</option>
                 </select>
               </div>
 

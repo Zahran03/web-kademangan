@@ -5,18 +5,20 @@ const cors = require("cors");
 const beritaRoutes = require("./routes/beritaRoutes");
 const umkmRoutes = require("./routes/umkmRoutes");
 const authRoutes = require("./routes/Auth");
+const path = require("path");
 
 app.use(cors());
 app.use(express.json());
+app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 const multer = require("multer");
 
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/");
+  destination: (req, file, cb) => {
+    cb(null, "uploads");
   },
-  filename: function (req, file, cb) {
-    cb(null, `${Date.now()}.${file.originalname}`);
+  filename: (req, file, cb) => {
+    cb(null, req.body.name);
   },
 });
 

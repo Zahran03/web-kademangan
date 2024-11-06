@@ -27,7 +27,7 @@ const CreateBerita = () => {
     // Upload file if exists
     if (file) {
       const data = new FormData();
-      const filename = Date.now() + "_" + file.name;
+      const filename = Date.now() + file.name;
       data.append("name", filename);
       data.append("file", file);
 
