@@ -4,6 +4,23 @@ const UmkmDetailDashboard = () => {
   const { id } = useParams();
   const umkm = useLoaderData();
   const dateOnly = new Date(umkm[0].created_at).toISOString().split("T")[0];
+  const deleteUmkm = async (jobId) => {
+    const confirm = window.confirm("Are you sure to delete this Umkm?");
+
+    if (!confirm) return;
+    try {
+      const res = await fetch(`http://localhost:3000/UMKM/${id}`, {
+        method: "DELETE",
+      });
+      if (res.ok) {
+        window.location.replace(`/dashboard/Umkm`);
+      } else {
+        console.error("Error creating post");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
   return (
     <div className="flex flex-wrap container bg-secondary rounded-md">
       <div className="w-full mx-auto">
@@ -19,12 +36,18 @@ const UmkmDetailDashboard = () => {
         </section>
 
         <div className="w-full mt-2 mb-2 flex items-center justify-center text-secondary font-semibold gap-2">
-          <Link to="/" className="px-3 py-2 rounded-md bg-green-500">
+          <Link
+            to={`/dashboard/Edit-Umkm/${id}`}
+            className="px-3 py-2 rounded-md bg-green-500"
+          >
             Edit
           </Link>
-          <Link to="/" className="px-3 py-2 rounded-md bg-red-500">
+          <button
+            onClick={() => deleteUmkm(umkm[0].id)}
+            className="px-3 py-2 rounded-md bg-red-500"
+          >
             Delete
-          </Link>
+          </button>
         </div>
 
         <section className=" text-primary w-full mt-4 text-center px-4">

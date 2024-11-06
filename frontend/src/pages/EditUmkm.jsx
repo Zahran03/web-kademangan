@@ -4,11 +4,12 @@ import "react-quill/dist/quill.snow.css";
 import DOMPurify from "dompurify";
 import { useLoaderData, useParams } from "react-router-dom";
 
-const EditBerita = () => {
+const EditUmkm = () => {
   const { id } = useParams();
-  const berita = useLoaderData();
-  const [judul, setJudul] = useState(berita[0].judul);
-  const [deskripsi, setDeskripsi] = useState(berita[0].deskripsi);
+  const umkm = useLoaderData();
+  const [nama_umkm, setNama_umkm] = useState(umkm[0].nama_umkm);
+  const [kategori, setKategori] = useState(umkm[0].kategori);
+  const [deskripsi, setDeskripsi] = useState(umkm[0].deskripsi);
   const [file, setFile] = useState(null);
 
   // Fungsi handle submit
@@ -22,8 +23,9 @@ const EditBerita = () => {
         .textContent || "";
 
     // Object to hold the new post data
-    const updatePost = {
-      judul,
+    const updateUmkm = {
+      nama_umkm,
+      kategori,
       deskripsi: plainTextDeskripsi,
     };
 
@@ -41,7 +43,7 @@ const EditBerita = () => {
         });
 
         if (uploadResponse.ok) {
-          updatePost.gambar = filename;
+          updateUmkm.gambar = filename;
         } else {
           throw new Error("File upload failed");
         }
@@ -53,16 +55,16 @@ const EditBerita = () => {
 
     // Send new post data to server
     try {
-      const res = await fetch(`http://localhost:3000/berita/${id}`, {
+      const res = await fetch(`http://localhost:3000/UMKM/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(updatePost),
+        body: JSON.stringify(updateUmkm),
       });
 
       if (res.ok) {
-        window.location.replace(`/dashboard/Berita/${id}`);
+        window.location.replace(`/dashboard/Umkm/${id}`);
       } else {
         console.error("Error creating post");
       }
@@ -76,7 +78,7 @@ const EditBerita = () => {
         <div className="flex items-center justify-center min-h-screen">
           <div className="w-full max-w-xl p-8 bg-white rounded-md shadow-md">
             <h1 className="text-2xl font-bold mb-6 text-center">
-              Form Input Berita
+              Form Input Update Berita
             </h1>
             <div className="w-full py-2 ">
               {/* Display the uploaded image if file exists, otherwise display the existing image */}
@@ -89,7 +91,7 @@ const EditBerita = () => {
               ) : (
                 <img
                   className="w-full object-cover object-center"
-                  src={`http://localhost:3000/uploads/${berita[0].gambar}`}
+                  src={`http://localhost:3000/uploads/${umkm[0].gambar}`}
                   alt="Existing image"
                 />
               )}
@@ -101,13 +103,13 @@ const EditBerita = () => {
                   className="block text-gray-700 font-semibold mb-2"
                   htmlFor="judul"
                 >
-                  Judul
+                  Nama Umkm
                 </label>
                 <input
                   type="text"
                   id="judul"
-                  value={judul}
-                  onChange={(e) => setJudul(e.target.value)}
+                  value={nama_umkm}
+                  onChange={(e) => setNama_umkm(e.target.value)}
                   className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="Masukkan judul berita"
                 />
@@ -128,6 +130,33 @@ const EditBerita = () => {
                   className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="Masukkan gambar"
                 />
+              </div>
+
+              {/* edit kategori */}
+              {/* Input Kategori */}
+              <div>
+                <label
+                  className="block text-gray-700 font-semibold mb-2"
+                  htmlFor="kategori"
+                >
+                  Kategori
+                </label>
+                <select
+                  id="kategori"
+                  value={kategori}
+                  onChange={(e) => setKategori(e.target.value)}
+                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  <option value="">Pilih kategori</option>
+                  <option value="Peternakan">Peternakan</option>
+                  <option value="Kerajinan Tangan">Kerajinan Tangan</option>
+                  <option value="Pengolahan Pangan Lokal">
+                    Pengolahan Pangan Lokal
+                  </option>
+                  <option value="Wisata">Wisata</option>
+                  <option value="Penginapan">Penginapan</option>
+                  <option value="Kuliner">Kuliner</option>
+                </select>
               </div>
 
               {/* Input Deskripsi menggunakan React Quill */}
@@ -161,4 +190,4 @@ const EditBerita = () => {
   );
 };
 
-export default EditBerita;
+export default EditUmkm;
