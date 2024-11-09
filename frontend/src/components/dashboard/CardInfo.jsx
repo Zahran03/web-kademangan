@@ -6,7 +6,7 @@ const CardInfo = () => {
   useEffect(() => {
     const fetchBerita = async () => {
       try {
-        const res = await fetch("http://localhost:3000/berita");
+        const res = await fetch("/berita");
         const dataBerita = await res.json();
         setBerita(dataBerita);
         fetchUmkm();
@@ -14,7 +14,7 @@ const CardInfo = () => {
     };
     const fetchUmkm = async () => {
       try {
-        const res = await fetch("http://localhost:3000/UMKM");
+        const res = await fetch("/UMKM");
         const dataUmkm = await res.json();
         setUmkm(dataUmkm);
       } catch (error) {}

@@ -8,15 +8,17 @@ const authRoutes = require("./routes/Auth");
 
 app.use(cors());
 app.use(express.json());
+app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 const multer = require("multer");
+const path = require("path");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "uploads/");
   },
   filename: function (req, file, cb) {
-    cb(null, `${Date.now()}.${file.originalname}`);
+    cb(null, req.body.name);
   },
 });
 

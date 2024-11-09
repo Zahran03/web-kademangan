@@ -29,7 +29,7 @@ const CreateBerita = () => {
       } catch (err) {}
     }
     try {
-      const res = await fetch("http://localhost:3000/berita/create", {
+      const res = await fetch("/berita/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
