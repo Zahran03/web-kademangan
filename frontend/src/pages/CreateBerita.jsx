@@ -24,12 +24,25 @@ const CreateBerita = () => {
       const filename = Date.now() + file.name;
       data.append("name", filename);
       data.append("file", file);
-      newPost.gambar = filename;
+
       try {
-      } catch (err) {}
+        const uploadResponse = await fetch("http://localhost:3000/upload", {
+          method: "POST",
+          body: data,
+        });
+
+        if (uploadResponse.ok) {
+          newPost.gambar = filename;
+        } else {
+          throw new Error("File Upload Failed");
+        }
+      } catch (err) {
+        console.log("error uploading file", err);
+        return;
+      }
     }
     try {
-      const res = await fetch("/berita/create", {
+      const res = await fetch("http://localhost:3000/berita/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,6 +61,15 @@ const CreateBerita = () => {
             <h1 className="text-2xl font-bold mb-6 text-center">
               Form Input Berita
             </h1>
+            <div className="w-full py-2">
+              {file && (
+                <img
+                  className="w-full object-cover object-center"
+                  src={URL.createObjectURL(file)}
+                  alt=""
+                />
+              )}
+            </div>
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Input Judul */}
               <div>

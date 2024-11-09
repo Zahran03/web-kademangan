@@ -7,7 +7,7 @@ const BeritaDashboard = () => {
   useEffect(() => {
     const fetchBerita = async () => {
       try {
-        const res = await fetch("/berita");
+        const res = await fetch("http://localhost:3000/berita");
         const data = await res.json();
         setDataBerita(data);
       } catch (error) {}
