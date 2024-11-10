@@ -4,7 +4,22 @@ const BeritaDetailDashboard = () => {
   const { id } = useParams();
   const berita = useLoaderData();
   const dateOnly = new Date(berita[0].created_at).toISOString().split("T")[0];
-  const deleteBerita = async (jobId) => {};
+  const deleteBerita = async (jobId) => {
+    const confirm = window.confirm("Apakah kamu yakin menghapus berita ini ?");
+    if (!confirm) return;
+    try {
+      const res = await fetch(`http://localhost:3000/berita/${id}`, {
+        method: "DELETE",
+      });
+      if (res.ok) {
+        window.location.replace("/dashboard/Berita");
+      } else {
+        console.error("Error delete post");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
   return (
     <div className="flex flex-wrap container bg-secondary rounded-md">
       <div className="w-full mx-auto">
