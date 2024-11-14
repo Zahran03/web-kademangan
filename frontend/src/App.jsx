@@ -23,6 +23,7 @@ import CreateUmkm from "./pages/CreateUmkm";
 import BeritaDetailDashboard, {
   beritaLoader,
 } from "./pages/BeritaDetailDashboard";
+import EditBerita from "./pages/EditBerita";
 
 function App() {
   const router = createBrowserRouter(
@@ -45,6 +46,11 @@ function App() {
           <Route
             path="Berita/:id"
             element={<BeritaDetailDashboard />}
+            loader={beritaLoader}
+          />
+          <Route
+            path="Edit-Berita/:id"
+            element={<EditBerita />}
             loader={beritaLoader}
           />
           <Route path="Umkm" element={<UmkmDashboard />} />
