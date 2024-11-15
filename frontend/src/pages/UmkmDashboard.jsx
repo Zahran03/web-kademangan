@@ -17,17 +17,13 @@ const UmkmDashboard = () => {
     }
   }, []);
   const columns = [
+    { Header: "ID", accessor: "id" },
     { Header: "Nama UMKM", accessor: "nama_umkm" },
     { Header: "Kategori", accessor: "kategori" },
     { Header: "Deskripsi", accessor: "deskripsi" },
     { Header: "Gambar", accessor: "gambar" },
   ];
 
-  // const data = [
-  //   { name: "John Doe", age: 28, email: "john@example.com" },
-  //   { name: "Jane Smith", age: 34, email: "jane@example.com" },
-  //   { name: "Mike Johnson", age: 45, email: "mike@example.com" },
-  // ];
   return (
     <div className="flex flex-wrap container  bg-secondary rounded-md">
       <div className="w-full mx-auto">
@@ -50,7 +46,7 @@ const UmkmDashboard = () => {
           </button>
         </div>
         {/* <BarAction /> */}
-        <Table columns={columns} data={umkm} />
+        <Table columns={columns} data={umkm} route={"Umkm"} />
       </div>
     </div>
   );
