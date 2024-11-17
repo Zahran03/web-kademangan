@@ -23,6 +23,9 @@ const BeritaDetailDashboard = () => {
   return (
     <div className="flex flex-wrap container bg-secondary rounded-md">
       <div className="w-full mx-auto">
+        <Link to="/dashboard/Berita" className="w-full">
+          <p className="font-bold py-3"> ⬅️ Kembali</p>
+        </Link>
         <img
           src={`http://localhost:3000/uploads/${berita[0].gambar}`}
           className="w-full object-cover object-center rounded-md h-[252px]"
