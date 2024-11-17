@@ -27,7 +27,19 @@ const CreateUmkm = () => {
       data.append("file", file);
       newPost.gambar = filename;
       try {
-      } catch (err) {}
+        const uploadResponse = await fetch("http://localhost:3000/upload", {
+          method: "POST",
+          body: data,
+        });
+        if (uploadResponse.ok) {
+          newPost.gambar = filename;
+        } else {
+          throw new Error("file upload failed");
+        }
+      } catch (err) {
+        console.error("Error upload file :", err);
+        return;
+      }
     }
     try {
       const res = await fetch("http://localhost:3000/UMKM/create", {
@@ -39,7 +51,6 @@ const CreateUmkm = () => {
       });
       window.location.replace("/dashboard/Umkm");
     } catch (error) {}
-    console.log(newPost);
   };
   return (
     <div className="flex flex-wrap container bg-secondary rounded-md">
@@ -49,6 +60,9 @@ const CreateUmkm = () => {
             <h1 className="text-2xl font-bold mb-6 text-center">
               Tambah Data Umkm
             </h1>
+            <div className="w-full py-2">
+              {file && <img src={URL.createObjectURL(file)} alt="" />}
+            </div>
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Input Judul */}
               <div>
@@ -90,7 +104,7 @@ const CreateUmkm = () => {
                   </option>
                   <option value="Wisata">Wisata</option>
                   <option value="Penginapan">Penginapan</option>
-                  <option value="Penginapan">Kuliner</option>
+                  <option value="Kuliner">Kuliner</option>
                 </select>
               </div>
 

@@ -12,7 +12,7 @@ const EditUmkm = () => {
   const [deskripsi, setDeskripsi] = useState(umkm[0].deskripsi);
   const [file, setFile] = useState(null);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const sanitizedDeskripsi = DOMPurify.sanitize(deskripsi);
@@ -37,6 +37,7 @@ const EditUmkm = () => {
           method: "POST",
           body: data,
         });
+
         if (uploadResponse.ok) {
           updateUmkm.gambar = filename;
         } else {
@@ -49,7 +50,7 @@ const EditUmkm = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/UMKM/${umkm[0].id}`, {
+      const res = await fetch(`http://localhost:3000/UMKM/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -71,7 +72,7 @@ const EditUmkm = () => {
         <div className="flex items-center justify-center min-h-screen">
           <div className="w-full max-w-xl p-8 bg-white rounded-md shadow-md">
             <h1 className="text-2xl font-bold mb-6 text-center">
-              Form Input Update Berita
+              Form Input Update Umkm
             </h1>
             <div className="w-full py-2 ">
               {/* Display the uploaded image if file exists, otherwise display the existing image */}
