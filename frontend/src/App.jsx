@@ -26,6 +26,7 @@ import BeritaDetailDashboard, {
 import EditBerita from "./pages/EditBerita";
 import UmkmDasboardDetail, { umkmLoader } from "./pages/UmkmDasboardDetail";
 import EditUmkm from "./pages/EditUmkm";
+import BeritaDetail from "./pages/BeritaDetail";
 
 function App() {
   const router = createBrowserRouter(
@@ -38,6 +39,11 @@ function App() {
           <Route path="/umkm" element={<UmkmPages />} />
           <Route path="/struktur" element={<Struktur />} />
           <Route path="/berita" element={<Berita />} />
+          <Route
+            path="/berita/:id"
+            element={<BeritaDetail />}
+            loader={beritaLoader}
+          />
           <Route path="/layanan" element={<LayananMasyarakat />} />
           <Route path="/pengaduan" element={<LayananPengaduan />} />
         </Route>
