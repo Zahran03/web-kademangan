@@ -1,9 +1,9 @@
-import React from "react";
 import { useLoaderData, useParams, Link } from "react-router-dom";
 
 const BeritaDetail = () => {
   const { id } = useParams();
   const berita = useLoaderData();
+  console.log(berita);
 
   return (
     <div className="flex flex-wrap container bg-secondary rounded-md">
@@ -18,7 +18,7 @@ const BeritaDetail = () => {
         />
         <section className=" text-primary w-full mt-4 text-center">
           <h1 className="text-3xl font-bold">{berita[0].judul}</h1>
-          <p className="text-base font-semibold">Dibuat : {dateOnly}</p>
+          <p className="text-base font-semibold">Dibuat : </p>
         </section>
 
         <section className=" text-primary w-full mt-4 text-center px-4">
