@@ -41,6 +41,12 @@ const Navbar = () => {
           }`}
         >
           <Link
+            to="/"
+            className="hover:text-gray-300 cursor-pointer px-6 py-2 md:py-0 md:px-0 w-full text-center"
+          >
+            <p>Home</p>
+          </Link>
+          <Link
             to="/struktur"
             className="hover:text-gray-300 cursor-pointer px-6 py-2 md:py-0 md:px-0 w-full text-center"
           >
