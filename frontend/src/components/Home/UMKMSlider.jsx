@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const UMKMSlider = () => {
   const [umkmData, setUmkmData] = useState([]);
@@ -28,10 +29,12 @@ const UMKMSlider = () => {
     >
       {umkmData.map((umkm) => (
         <SwiperSlide className="max-w-[300px] swiper-slider text-center h-full flex items-center justify-center m-0 transition-transform aspect-square bg-white text-red-500">
-          <img
-            src={`http://localhost:3000/uploads/${umkm.gambar}`}
-            className="flex items-center justify-center w-full h-full object-cover object-center"
-          />
+          <Link to={`/umkm/${umkm.id}`}>
+            <img
+              src={`http://localhost:3000/uploads/${umkm.gambar}`}
+              className="flex items-center justify-center w-full h-full object-cover object-center"
+            />
+          </Link>
         </SwiperSlide>
       ))}
       <SwiperSlide className="max-w-[300px] swiper-slider text-center h-full flex items-center justify-center m-0 transition-transform aspect-square bg-white text-red-500">
