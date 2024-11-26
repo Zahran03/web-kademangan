@@ -27,6 +27,7 @@ import EditBerita from "./pages/EditBerita";
 import UmkmDasboardDetail, { umkmLoader } from "./pages/UmkmDasboardDetail";
 import EditUmkm from "./pages/EditUmkm";
 import BeritaDetail from "./pages/BeritaDetail";
+import UmkmDetail from "./pages/UmkmDetail";
 
 function App() {
   const router = createBrowserRouter(
@@ -37,6 +38,11 @@ function App() {
           <Route index element={<Home />} />
           {/* halaman Umkm */}
           <Route path="/umkm" element={<UmkmPages />} />
+          <Route
+            path="/umkm/:id"
+            element={<UmkmDetail />}
+            loader={umkmLoader}
+          />
           <Route path="/struktur" element={<Struktur />} />
           <Route path="/berita" element={<Berita />} />
           <Route
