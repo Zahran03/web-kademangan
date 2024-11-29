@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams, Link } from "react-router-dom";
 
 const UmkmDetail = () => {
   const { id } = useParams();
@@ -17,7 +17,9 @@ const UmkmDetail = () => {
           alt="gambar 1"
         />
         <section className=" text-primary w-full mt-4 text-center">
-          <h1 className="md:text-3xl text-2xl font-bold">{umkm[0].judul}</h1>
+          <h1 className="md:text-3xl text-2xl font-bold">
+            {umkm[0].nama_umkm}
+          </h1>
           <p className="text-base font-semibold">Dibuat : {dateOnly}</p>
         </section>
 
