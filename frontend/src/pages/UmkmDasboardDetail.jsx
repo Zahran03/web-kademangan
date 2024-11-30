@@ -11,7 +11,7 @@ const UmkmDasboardDetail = () => {
 
     if (!confirm) return;
     try {
-      const res = await fetch(`http://localhost:3000/UMKM/${id}`, {
+      const res = await fetch(`http://localhost:3000/api/UMKM/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {

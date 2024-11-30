@@ -50,7 +50,7 @@ const EditUmkm = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/UMKM/${id}`, {
+      const res = await fetch(`http://localhost:3000/api/UMKM/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -28,6 +28,7 @@ import UmkmDasboardDetail, { umkmLoader } from "./pages/UmkmDasboardDetail";
 import EditUmkm from "./pages/EditUmkm";
 import BeritaDetail from "./pages/BeritaDetail";
 import UmkmDetail from "./pages/UmkmDetail";
+import EditHeroSection from "./pages/EditHeroSection";
 
 function App() {
   const router = createBrowserRouter(
@@ -80,6 +81,7 @@ function App() {
           />
           <Route path="PostBerita" element={<CreateBerita />} />
           <Route path="PostUmkm" element={<CreateUmkm />} />
+          <Route path="heroSlider" element={<EditHeroSection />} />
         </Route>
       </>
     )

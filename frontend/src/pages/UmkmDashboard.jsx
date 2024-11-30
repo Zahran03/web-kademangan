@@ -7,7 +7,7 @@ const UmkmDashboard = () => {
   useEffect(() => {
     try {
       const fetchUmkm = async () => {
-        const res = await fetch("http://localhost:3000/UMKM");
+        const res = await fetch("http://localhost:3000/api/UMKM");
         const data = await res.json();
         setUmkm(data);
       };

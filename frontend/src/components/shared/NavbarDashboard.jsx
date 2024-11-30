@@ -43,6 +43,9 @@ const NavbarDashboard = () => {
           <Link to="/dashboard" className="text-white hover:text-gray-200">
             Home
           </Link>
+          <Link to="/heroSlider" className="text-white hover:text-gray-200">
+            Hero Slider
+          </Link>
           <Link
             to="/dashboard/Berita"
             className="text-white hover:text-gray-200"
