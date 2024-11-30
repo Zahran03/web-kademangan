@@ -27,7 +27,7 @@ const CreateUmkm = () => {
       data.append("file", file);
       newPost.gambar = filename;
       try {
-        const uploadResponse = await fetch("http://localhost:3000/upload", {
+        const uploadResponse = await fetch("http://localhost:3000/api/upload", {
           method: "POST",
           body: data,
         });

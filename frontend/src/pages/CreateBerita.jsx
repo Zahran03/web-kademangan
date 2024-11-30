@@ -42,7 +42,7 @@ const CreateBerita = () => {
       }
     }
     try {
-      const res = await fetch("http://localhost:3000/berita/create", {
+      const res = await fetch("http://localhost:3000/api/berita/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -7,7 +7,7 @@ const Berita = () => {
   useEffect(() => {
     const fetchBerita = async () => {
       try {
-        const data = await fetch("http://localhost:3000/berita");
+        const data = await fetch("http://localhost:3000/api/berita");
         const res = await data.json();
         setBeritaItems(res);
       } catch (error) {

@@ -5,7 +5,7 @@ const NewsSection = () => {
   useEffect(() => {
     const fecthBerita = async () => {
       try {
-        const res = await fetch("http://localhost:3000/berita");
+        const res = await fetch("http://localhost:3000/api/berita");
         const data = await res.json();
         setBeritaData(data);
         //setBeritaData(data);

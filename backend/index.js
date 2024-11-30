@@ -25,13 +25,13 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // autentikasi
-app.use("/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 
 // berita routes
-app.use("/berita", beritaRoutes);
+app.use("/api/berita", beritaRoutes);
 
 // UMKM Routes
-app.use("/UMKM", umkmRoutes);
+app.use("/api/UMKM", umkmRoutes);
 
 //upload poto handle
 app.post("/upload", upload.single("file"), (req, res) => {

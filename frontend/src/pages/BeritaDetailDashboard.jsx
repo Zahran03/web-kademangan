@@ -8,7 +8,7 @@ const BeritaDetailDashboard = () => {
     const confirm = window.confirm("Apakah kamu yakin menghapus berita ini ?");
     if (!confirm) return;
     try {
-      const res = await fetch(`http://localhost:3000/berita/${id}`, {
+      const res = await fetch(`http://localhost:3000/api/berita/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
