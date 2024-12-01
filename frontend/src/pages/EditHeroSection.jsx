@@ -10,13 +10,18 @@ const EditHeroSection = () => {
         <div className="w-full">
           <h1 className="text-3xl font-bold">Edit Hero Section</h1>
         </div>
-        <div className="w-full py-2">
+        <div className="w-full py-2 relative">
           {file && (
-            <img
-              className="w-full object-cover object-center"
-              src={URL.createObjectURL(file)}
-              alt=""
-            />
+            <>
+              <img
+                className="w-full h-[250px] rounded-md object-cover object-center"
+                src={URL.createObjectURL(file)}
+                alt=""
+              />
+              <h1 className="text-4xl font-bold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-secondary text-center">
+                {judul}
+              </h1>
+            </>
           )}
         </div>
         <form className="space-y-4">
@@ -52,6 +57,13 @@ const EditHeroSection = () => {
               placeholder="Masukkan gambar"
             />
           </div>
+          {/* Tombol Submit */}
+          <button
+            type="submit"
+            className="w-full py-2 px-4 bg-primary text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 "
+          >
+            Submit
+          </button>
         </form>
       </div>
     </div>
