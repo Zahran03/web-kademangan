@@ -1,9 +1,45 @@
 import { useState } from "react";
 
-const EditHeroSection = () => {
+const CreateHeroSection = () => {
   const [judul, setJudul] = useState("");
-  const [gambar, setGamber] = useState("");
   const [file, setFile] = useState(null);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newHeroSection = { judul };
+    if (file) {
+      const data = new FormData();
+      const filename = Date.now() + file.name;
+      data.append("name", filename);
+      data.append("file", file);
+
+      try {
+        const uploadResponse = await fetch("http://localhost:3000/upload", {
+          method: "POST",
+          body: data,
+        });
+
+        if (uploadResponse.ok) {
+          newHeroSection.gambar = filename;
+        } else {
+          throw new Error("file upload failed");
+        }
+      } catch (error) {
+        console.error("error uploading file");
+        return;
+      }
+    }
+
+    try {
+      const res = await fetch("http://localhost:3000/api/heroSection/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newHeroSection),
+      });
+      window.location.replace("/dashboard/heroSlider");
+    } catch (error) {}
+  };
   return (
     <div className="flex flex-wrap container  bg-secondary rounded-md">
       <div className="w-full mx-auto">
@@ -24,7 +60,7 @@ const EditHeroSection = () => {
             </>
           )}
         </div>
-        <form className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label
               className="block text-gray-700 font-semibold mb-2"
@@ -70,4 +106,4 @@ const EditHeroSection = () => {
   );
 };
 
-export default EditHeroSection;
+export default CreateHeroSection;

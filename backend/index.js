@@ -6,6 +6,7 @@ const path = require("path");
 const beritaRoutes = require("./routes/beritaRoutes");
 const umkmRoutes = require("./routes/umkmRoutes");
 const authRoutes = require("./routes/Auth");
+const heroSectionRoutes = require("./routes/heroRoutes");
 
 app.use(cors());
 app.use(express.json());
@@ -32,6 +33,9 @@ app.use("/api/berita", beritaRoutes);
 
 // UMKM Routes
 app.use("/api/UMKM", umkmRoutes);
+
+// heroSection Routes
+app.use("/api/heroSection", heroSectionRoutes);
 
 //upload poto handle
 app.post("/upload", upload.single("file"), (req, res) => {

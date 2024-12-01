@@ -37,7 +37,7 @@ const CreateBerita = () => {
           throw new Error("File Upload Failed");
         }
       } catch (err) {
-        console.log("error uploading file", err);
+        console.error("error uploading file", err);
         return;
       }
     }
@@ -51,7 +51,6 @@ const CreateBerita = () => {
       });
       window.location.replace("/dashboard/Berita");
     } catch (error) {}
-    console.log(newPost);
   };
   return (
     <div className="flex flex-wrap container bg-secondary rounded-md">

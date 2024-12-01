@@ -9,6 +9,19 @@ const getAllHero = async (req, res) => {
   }
 };
 
+const createHeroSection = async (req, res) => {
+  try {
+    const { data, error } = await supabase.from("heroSection").insert(req.body);
+    if (error) {
+      return res.status(400).json();
+    }
+    res.status(200).json(req.body);
+  } catch (error) {
+    res.send({ error });
+  }
+};
+
 module.exports = {
   getAllHero,
+  createHeroSection,
 };
