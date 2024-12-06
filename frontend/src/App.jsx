@@ -29,6 +29,7 @@ import EditUmkm from "./pages/EditUmkm";
 import BeritaDetail from "./pages/BeritaDetail";
 import UmkmDetail from "./pages/UmkmDetail";
 import CreateHeroSection from "./pages/CreateHeroSection";
+import LayananPindahDomisili from "./pages/Layanan/LayananPindahDomisili";
 
 function App() {
   const router = createBrowserRouter(
@@ -53,6 +54,10 @@ function App() {
           />
           <Route path="/layanan" element={<LayananMasyarakat />} />
           <Route path="/pengaduan" element={<LayananPengaduan />} />
+          <Route
+            path="/LayananSuratPindahDomisili"
+            element={<LayananPindahDomisili />}
+          />
         </Route>
         <Route path="/dashboard" element={<DashBoardLayout />}>
           <Route index element={<DashboardAdmin />} />
