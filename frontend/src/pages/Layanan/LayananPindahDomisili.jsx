@@ -33,19 +33,35 @@ const LayananPindahDomisili = () => {
                   Syarat Pengajuan Surat Pindah Domisili
                 </h1>
 
-                {persyaratan.map((syarat) => (
-                  <ul>
+                <ul className="list-disc">
+                  {persyaratan.map((syarat) => (
                     <li>{syarat.title}</li>
-                  </ul>
-                ))}
+                  ))}
+                </ul>
               </section>
               <div className="text-secondary w-1/2 px-[44px] flex flex-col items-center">
                 <h1 className="text-3xl font-bold text-center mb-[101px]">
                   Formulir Online
                 </h1>
-                <form>
-                  <label htmlFor="">Nama :</label>
-                  <input type="text" />
+                <form className="w-full">
+                  <div>
+                    <label htmlFor="" className="block">
+                      Nama :
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-primary border-b-2 border-secondary"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <label htmlFor="" className="block">
+                      NIK :
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-primary border-b-2 border-secondary"
+                    />
+                  </div>
                 </form>
               </div>
             </div>
