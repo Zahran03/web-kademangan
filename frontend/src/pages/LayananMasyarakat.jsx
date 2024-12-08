@@ -7,8 +7,16 @@ const LayananMasyarakat = () => {
       description: "Lorem ipsum dolor sit amet.",
       link: "LayananSuratPindahDomisili",
     },
-    { title: "Pengajuan BPJS", description: "Lorem ipsum dolor sit amet." },
-    { title: "Pengajuan SKTM", description: "Lorem ipsum dolor sit amet." },
+    {
+      title: "LayananPengajuanBPJS",
+      description: "Lorem ipsum dolor sit amet.",
+      link: "LayananPengajuanBPJS",
+    },
+    {
+      title: "LayananPengajuanSKTM",
+      description: "Lorem ipsum dolor sit amet.",
+      link: "LayananPengajuanSKTM",
+    },
   ];
 
   return (

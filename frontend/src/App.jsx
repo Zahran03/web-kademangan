@@ -30,6 +30,8 @@ import BeritaDetail from "./pages/BeritaDetail";
 import UmkmDetail from "./pages/UmkmDetail";
 import CreateHeroSection from "./pages/CreateHeroSection";
 import LayananPindahDomisili from "./pages/Layanan/LayananPindahDomisili";
+import LayananBPJS from "./pages/Layanan/LayananBPJS";
+import LayananSKTM from "./pages/Layanan/LayananSKTM";
 
 function App() {
   const router = createBrowserRouter(
@@ -58,6 +60,8 @@ function App() {
             path="/LayananSuratPindahDomisili"
             element={<LayananPindahDomisili />}
           />
+          <Route path="/LayananPengajuanBPJS" element={<LayananBPJS />} />
+          <Route path="/LayananPengajuanSKTM" element={<LayananSKTM />} />
         </Route>
         <Route path="/dashboard" element={<DashBoardLayout />}>
           <Route index element={<DashboardAdmin />} />
