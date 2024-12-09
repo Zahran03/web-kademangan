@@ -1,5 +1,3 @@
-import React from "react";
-
 const LayananPindahDomisili = () => {
   const persyaratan = [
     { title: "Kartu Tanda Penduduk (KTP)" },
