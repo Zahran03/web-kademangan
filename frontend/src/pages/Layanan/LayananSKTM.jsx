@@ -1,18 +1,13 @@
 const LayananSKTM = () => {
   const persyaratan = [
-    { title: "Kartu Tanda Penduduk (KTP)" },
-    { title: "Kartu Keluarga (KK)" },
     {
       title:
-        "Formulir pendaftaran perpindahan penduduk dari Disdukcapil kabupaten/kota atau situs resmi mereka",
+        "Surat pernyataan tidak mampu yang diketahui RT dan dua orang saksi",
     },
+    { title: "Tanda lunas pajak bumi dan bangunan (PBB)" },
     {
       title:
-        "Surat Keterangan Pindah Warga Negara Indonesia (SKPWNI) dari Disdukcapil asal, jika Anda pindah dari daerah lain",
-    },
-    {
-      title:
-        "Dokumen transmigrasi, jika Anda melakukan pindah melalui program transmigrasi",
+        "Pas foto rumah dari posisi depan dan samping rumah, masing-masing ukuran 5R",
     },
   ];
   return (

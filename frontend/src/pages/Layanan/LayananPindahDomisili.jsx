@@ -1,18 +1,17 @@
 const LayananPindahDomisili = () => {
   const persyaratan = [
-    { title: "Kartu Tanda Penduduk (KTP)" },
-    { title: "Kartu Keluarga (KK)" },
+    { title: "Kartu Tanda Penduduk (KTP) asli dan fotokopi" },
+    { title: "Kartu Keluarga (KK) asli dan fotokopi" },
     {
       title:
-        "Formulir pendaftaran perpindahan penduduk dari Disdukcapil kabupaten/kota atau situs resmi mereka",
+        "Formulir pendaftaran perpindahan penduduk dari Disdukcapil setempat atau melalui situs resmi",
     },
     {
       title:
-        "Surat Keterangan Pindah Warga Negara Indonesia (SKPWNI) dari Disdukcapil asal, jika Anda pindah dari daerah lain",
+        "Surat Keterangan Pindah Warga Negara Indonesia (SKPWNI) dari Disdukcapil asal, jika diperlukan",
     },
     {
-      title:
-        "Dokumen transmigrasi, jika Anda melakukan pindah melalui program transmigrasi",
+      title: "Pas foto 3 – 5 lembar ukuran 3X4",
     },
   ];
   return (
