@@ -3,16 +3,19 @@ const LayananBPJS = () => {
     { title: "Kartu Tanda Penduduk (KTP)" },
     { title: "Kartu Keluarga (KK)" },
     {
-      title:
-        "Formulir pendaftaran perpindahan penduduk dari Disdukcapil kabupaten/kota atau situs resmi mereka",
+      title: "Buku rekening tabungan yang aktif ",
     },
     {
-      title:
-        "Surat Keterangan Pindah Warga Negara Indonesia (SKPWNI) dari Disdukcapil asal, jika Anda pindah dari daerah lain",
+      title: "Nomor Pokok Wajib Pajak (NPWP) jika ada",
     },
     {
-      title:
-        "Dokumen transmigrasi, jika Anda melakukan pindah melalui program transmigrasi",
+      title: "Pas foto berukuran 3×4 dengan ukuran maksimal 50kb",
+    },
+    {
+      title: "Nomor handphone",
+    },
+    {
+      title: "Alamat email",
     },
   ];
   return (
@@ -52,6 +55,60 @@ const LayananBPJS = () => {
                   <div className="mt-2">
                     <label htmlFor="" className="block">
                       NIK :
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-primary border-b-2 border-secondary"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <label htmlFor="" className="block">
+                      Kartu Keluarga :
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-primary border-b-2 border-secondary"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <label htmlFor="" className="block">
+                      Buku Rekening Aktif :
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-primary border-b-2 border-secondary"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <label htmlFor="" className="block">
+                      NPWP jika ada :
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-primary border-b-2 border-secondary"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <label htmlFor="" className="block">
+                      Pas foto berukuran 3×4 maksimal 50kb :
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-primary border-b-2 border-secondary"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <label htmlFor="" className="block">
+                      Nomor Handphone :
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-primary border-b-2 border-secondary"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <label htmlFor="" className="block">
+                      Alamat Email :
                     </label>
                     <input
                       type="text"
