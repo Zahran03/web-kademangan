@@ -59,6 +59,33 @@ const LayananPindahDomisili = () => {
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
+                  <div className="mt-2">
+                    <label htmlFor="" className="block">
+                      Kartu Tanda Penduduk :
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-primary border-b-2 border-secondary"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <label htmlFor="" className="block">
+                      Kartu Keluarga :
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-primary border-b-2 border-secondary"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <label htmlFor="" className="block">
+                      Pas Foto Ukuran 3 x 4 :
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-primary border-b-2 border-secondary"
+                    />
+                  </div>
                 </form>
               </div>
             </div>
