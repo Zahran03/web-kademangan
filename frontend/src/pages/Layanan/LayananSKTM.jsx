@@ -55,6 +55,35 @@ const LayananSKTM = () => {
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
+                  <div className="mt-2">
+                    <label htmlFor="" className="block">
+                      Surat pernyataan tidak mampu yang diketahui RT dan dua
+                      orang saksi :
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-primary border-b-2 border-secondary"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <label htmlFor="" className="block">
+                      Tanda lunas pajak bumi dan bangunan (PBB) :
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-primary border-b-2 border-secondary"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <label htmlFor="" className="block">
+                      Pas foto rumah dari posisi depan dan samping rumah,
+                      masing-masing ukuran 5R :
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-primary border-b-2 border-secondary"
+                    />
+                  </div>
                 </form>
               </div>
             </div>
