@@ -1,4 +1,14 @@
+import { useState } from "react";
+
 const LayananBPJS = () => {
+  const [ktp, setKtp] = useState("");
+  const [kk, setKK] = useState("");
+  const [rekening, setRekening] = useState("");
+  const [npwp, setNpwp] = useState("");
+  const [pasFoto, setPasFoto] = useState("");
+  const [noHp, setNoHp] = useState("");
+  const [email, setEmail] = useState("");
+
   const persyaratan = [
     { title: "Kartu Tanda Penduduk (KTP)" },
     { title: "Kartu Keluarga (KK)" },
