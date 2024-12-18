@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const LayananBPJS = () => {
   const [ktp, setKtp] = useState("");
+  const [nik, setNik] = useState("");
   const [kk, setKK] = useState("");
   const [rekening, setRekening] = useState("");
   const [npwp, setNpwp] = useState("");
@@ -59,6 +60,8 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      value={ktp}
+                      onChange={(e) => setKtp(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
@@ -68,6 +71,8 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      value={nik}
+                      onChange={(e) => setNik(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
@@ -77,6 +82,8 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      value={kk}
+                      onChange={(e) => setKK(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
@@ -86,6 +93,8 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      value={rekening}
+                      onChange={(e) => setRekening(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
@@ -95,6 +104,8 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      value={npwp}
+                      onChange={(e) => setNpwp(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
@@ -104,6 +115,8 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      value={pasFoto}
+                      onChange={(e) => setPasFoto(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
@@ -113,6 +126,8 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      value={noHp}
+                      onChange={(e) => setNoHp(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
@@ -122,6 +137,8 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
