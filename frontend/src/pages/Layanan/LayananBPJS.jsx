@@ -60,6 +60,7 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Masukan Nama anda"
                       value={ktp}
                       onChange={(e) => setKtp(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
@@ -71,6 +72,7 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Masukan NIK anda"
                       value={nik}
                       onChange={(e) => setNik(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
@@ -82,6 +84,7 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Masukan Kartu Keluarga anda"
                       value={kk}
                       onChange={(e) => setKK(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
@@ -93,6 +96,7 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Masukan Nomor Rekening Aktif"
                       value={rekening}
                       onChange={(e) => setRekening(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
@@ -104,6 +108,7 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Masukan NPWP anda jika ada"
                       value={npwp}
                       onChange={(e) => setNpwp(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
@@ -115,6 +120,7 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Upload Pas foto anda"
                       value={pasFoto}
                       onChange={(e) => setPasFoto(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
@@ -126,6 +132,7 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Masukan Nomor Handphone Aktif"
                       value={noHp}
                       onChange={(e) => setNoHp(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
@@ -137,6 +144,7 @@ const LayananBPJS = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Masukan Email anda"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"

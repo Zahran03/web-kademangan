@@ -1,4 +1,14 @@
+import { useState } from "react";
+
 const LayananPindahDomisili = () => {
+  const [nama, setNama] = useState("");
+  const [nik, setNik] = useState("");
+  const [ktp, setKtp] = useState("");
+  const [kk, setKk] = useState("");
+  const [formPerpindahan, setFormPerpindahan] = useState("");
+  const [skpwni, setSkpwni] = useState("");
+  const [pasFoto, setPasFoto] = useState("");
+
   const persyaratan = [
     { title: "Kartu Tanda Penduduk (KTP) asli dan fotokopi" },
     { title: "Kartu Keluarga (KK) asli dan fotokopi" },
@@ -47,6 +57,9 @@ const LayananPindahDomisili = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Masukan Nama anda"
+                      value={nama}
+                      onChange={(e) => setNama(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
@@ -56,6 +69,9 @@ const LayananPindahDomisili = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Masukan NIK anda"
+                      value={nik}
+                      onChange={(e) => setNik(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
@@ -65,6 +81,9 @@ const LayananPindahDomisili = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Upload Ktp anda"
+                      value={ktp}
+                      onChange={(e) => setKtp(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
@@ -73,6 +92,9 @@ const LayananPindahDomisili = () => {
                       Kartu Keluarga :
                     </label>
                     <input
+                      placeholder="Masukan KK anda"
+                      value={kk}
+                      onChange={(e) => setKk(e.target.value)}
                       type="text"
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
@@ -82,7 +104,10 @@ const LayananPindahDomisili = () => {
                       Pas Foto Ukuran 3 x 4 :
                     </label>
                     <input
-                      type="text"
+                      placeholder="Upload Ktp anda"
+                      value={pasFoto}
+                      onChange={(e) => setPasFoto(e.target.value)}
+                      type="file"
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
