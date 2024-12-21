@@ -1,4 +1,11 @@
+import { useState } from "react";
+
 const LayananSKTM = () => {
+  const [nama, setNama] = useState("");
+  const [nik, setNik] = useState("");
+  const [sktm, setSktm] = useState("");
+  const [suratPbb, setSuratPbb] = useState("");
+  const [pasFoto, setPasfoto] = useState("");
   const persyaratan = [
     {
       title:
