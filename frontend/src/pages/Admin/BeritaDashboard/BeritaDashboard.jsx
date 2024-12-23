@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Table from "../components/dashboard/Table";
+import Table from "../../../components/dashboard/Table";
 import { useState, useEffect } from "react";
 
 const BeritaDashboard = () => {

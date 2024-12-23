@@ -1,4 +1,4 @@
-import InfoDashboard from "../components/dashboard/InfoTable";
+import InfoDashboard from "../../components/dashboard/InfoTable";
 
 const DashboardAdmin = () => {
   return (

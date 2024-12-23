@@ -50,6 +50,9 @@ const LayananSKTM = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Masukan Nama Lengkap Anda"
+                      value={nama}
+                      onChange={(e) => setNama(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
@@ -59,6 +62,9 @@ const LayananSKTM = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Masukan Nomor Induk Keluarga"
+                      value={nik}
+                      onChange={(e) => setNik(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
@@ -69,6 +75,9 @@ const LayananSKTM = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Upload SKTM "
+                      value={sktm}
+                      onChange={(e) => setSktm(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
@@ -78,6 +87,9 @@ const LayananSKTM = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Upload Surat PBB"
+                      value={suratPbb}
+                      onChange={(e) => setSuratPbb(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
@@ -88,6 +100,9 @@ const LayananSKTM = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="Upload Gambar Rumah Anda"
+                      value={pasFoto}
+                      onChange={(e) => setPasfoto(e.target.value)}
                       className="w-full bg-primary border-b-2 border-secondary"
                     />
                   </div>
