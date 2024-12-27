@@ -119,7 +119,7 @@ const LayananBPJS = () => {
                       Pas foto berukuran 3×4 maksimal 50kb :
                     </label>
                     <input
-                      type="text"
+                      type="file"
                       placeholder="Upload Pas foto anda"
                       value={pasFoto}
                       onChange={(e) => setPasFoto(e.target.value)}
@@ -143,7 +143,7 @@ const LayananBPJS = () => {
                       Alamat Email :
                     </label>
                     <input
-                      type="text"
+                      type="email"
                       placeholder="Masukan Email anda"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}

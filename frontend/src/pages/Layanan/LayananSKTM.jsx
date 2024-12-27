@@ -74,7 +74,7 @@ const LayananSKTM = () => {
                       orang saksi :
                     </label>
                     <input
-                      type="text"
+                      type="file"
                       placeholder="Upload SKTM "
                       value={sktm}
                       onChange={(e) => setSktm(e.target.value)}
@@ -86,7 +86,7 @@ const LayananSKTM = () => {
                       Tanda lunas pajak bumi dan bangunan (PBB) :
                     </label>
                     <input
-                      type="text"
+                      type="file"
                       placeholder="Upload Surat PBB"
                       value={suratPbb}
                       onChange={(e) => setSuratPbb(e.target.value)}
@@ -99,7 +99,7 @@ const LayananSKTM = () => {
                       masing-masing ukuran 5R :
                     </label>
                     <input
-                      type="text"
+                      type="file"
                       placeholder="Upload Gambar Rumah Anda"
                       value={pasFoto}
                       onChange={(e) => setPasfoto(e.target.value)}
