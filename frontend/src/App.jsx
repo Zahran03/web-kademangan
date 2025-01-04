@@ -32,6 +32,7 @@ import CreateHeroSection from "./pages/CreateHeroSection";
 import LayananPindahDomisili from "./pages/Layanan/LayananPindahDomisili";
 import LayananBPJS from "./pages/Layanan/LayananBPJS";
 import LayananSKTM from "./pages/Layanan/LayananSKTM";
+import HeroSectionDashboard from "./pages/Admin/HeroSectionDashboard/HeroSectionDashboard";
 
 function App() {
   const router = createBrowserRouter(
@@ -90,6 +91,7 @@ function App() {
           />
           <Route path="PostBerita" element={<CreateBerita />} />
           <Route path="PostUmkm" element={<CreateUmkm />} />
+          <Route path="HeroSection" element={<HeroSectionDashboard />} />
           <Route path="heroSlider" element={<CreateHeroSection />} />
         </Route>
       </>
