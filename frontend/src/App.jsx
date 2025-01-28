@@ -9,26 +9,28 @@ import {
 import Home from "./pages/Home";
 import MainLayout from "./layout/MainLayout";
 import DashBoardLayout from "./layout/DashBoardLayout";
-import DashboardAdmin from "./pages/DashboardAdmin";
-import CreateBerita from "./pages/CreateBerita";
+import DashboardAdmin from "./pages/Admin/DashboardAdmin";
+import CreateBerita from "./pages/Admin/BeritaDashboard/CreateBerita";
 
-import UmkmDashboard from "./pages/UmkmDashboard";
-import UmkmPages from "./pages/UmkmPages";
-import Struktur from "./pages/Struktur";
-import BeritaDashboard from "./pages/BeritaDashboard";
-import Berita from "./pages/Berita";
-import LayananMasyarakat from "./pages/LayananMasyarakat";
-import LayananPengaduan from "./pages/LayananPengaduan";
-import CreateUmkm from "./pages/CreateUmkm";
+import UmkmDashboard from "./pages/Admin/UmkmDashboard/UmkmDashboard";
+import UmkmPages from "./pages/UMKM/UmkmPages";
+import Struktur from "./pages/Struktur/Struktur";
+import BeritaDashboard from "./pages/Admin/BeritaDashboard/BeritaDashboard";
+import Berita from "./pages/Berita/Berita";
+import LayananMasyarakat from "./pages/Layanan/LayananMasyarakat";
+import LayananPengaduan from "./pages/Layanan/LayananPengaduan";
+import CreateUmkm from "./pages/Admin/UmkmDashboard/CreateUmkm";
 import BeritaDetailDashboard, {
   beritaLoader,
-} from "./pages/BeritaDetailDashboard";
-import EditBerita from "./pages/EditBerita";
-import UmkmDasboardDetail, { umkmLoader } from "./pages/UmkmDasboardDetail";
-import EditUmkm from "./pages/EditUmkm";
-import BeritaDetail from "./pages/BeritaDetail";
-import UmkmDetail from "./pages/UmkmDetail";
-import CreateHeroSection from "./pages/CreateHeroSection";
+} from "./pages/Admin/BeritaDashboard/BeritaDetailDashboard";
+import EditBerita from "./pages/Admin/BeritaDashboard/EditBerita";
+import UmkmDasboardDetail, {
+  umkmLoader,
+} from "./pages/Admin/UmkmDashboard/UmkmDasboardDetail";
+import EditUmkm from "./pages/Admin/UmkmDashboard/EditUmkm";
+import BeritaDetail from "./pages/Berita/BeritaDetail";
+import UmkmDetail from "./pages/UMKM/UmkmDetail";
+import CreateHeroSection from "./pages/Admin/HeroSectionDashboard/CreateHeroSection";
 import LayananPindahDomisili from "./pages/Layanan/LayananPindahDomisili";
 import LayananBPJS from "./pages/Layanan/LayananBPJS";
 import LayananSKTM from "./pages/Layanan/LayananSKTM";

@@ -23,7 +23,7 @@ const UMKMSlider = () => {
     <Swiper
       slidesPerView={"auto"}
       spaceBetween={20}
-      loop={true}
+      loop={false}
       centeredSlides={true}
       className="overflow-hidden flex items-center justify-center w-full umkm-swiper"
     >
@@ -37,21 +37,6 @@ const UMKMSlider = () => {
           </Link>
         </SwiperSlide>
       ))}
-      <SwiperSlide className="max-w-[300px] swiper-slider text-center h-full flex items-center justify-center m-0 transition-transform aspect-square bg-white text-red-500">
-        <div className="flex items-center justify-center w-full h-full">2</div>
-      </SwiperSlide>
-      <SwiperSlide className="max-w-[300px] swiper-slider text-center h-full flex items-center justify-center m-0 transition-transform aspect-square bg-white text-red-500">
-        <div className="flex items-center justify-center w-full h-full">3</div>
-      </SwiperSlide>
-      <SwiperSlide className="max-w-[300px] swiper-slider text-center h-full flex items-center justify-center m-0 transition-transform aspect-square bg-white text-red-500">
-        <div className="flex items-center justify-center w-full h-full">4</div>
-      </SwiperSlide>
-      <SwiperSlide className="max-w-[300px] swiper-slider text-center h-full flex items-center justify-center m-0 transition-transform aspect-square bg-white text-red-500">
-        <div className="flex items-center justify-center w-full h-full">5</div>
-      </SwiperSlide>
-      <SwiperSlide className="max-w-[300px] swiper-slider text-center h-full flex items-center justify-center m-0 transition-transform aspect-square bg-white text-red-500">
-        <div className="flex items-center justify-center w-full h-full">6</div>
-      </SwiperSlide>
     </Swiper>
   );
 };
